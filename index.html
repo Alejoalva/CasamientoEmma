@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ec">
+  <meta name="description" content="Una invitación muy especial. ¡Nos casamos!">
+  <title>Marlene & Diego | Nos casamos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero" id="inicio">
+    <div class="hero-wash"></div>
+    <nav class="topbar"><a href="#inicio" class="monogram">M <span>&</span> D</a><a href="#confirmar" class="nav-link">Confirmar asistencia</a></nav>
+    <div class="hero-content">
+      <p class="eyebrow">¡NOS CASAMOS!</p>
+      <h1>Marlene <em>&</em> Diego</h1>
+      <div class="ornament">✦</div>
+      <p class="hero-date" id="hero-date">[FECHA DEL CASAMIENTO]</p>
+      <a class="button button-light" href="#invitacion">Descubrir la invitación</a>
+    </div>
+    <div class="hero-bottom">UNA NUEVA HISTORIA COMIENZA</div>
+  </header>
+
+  <main>
+    <section class="intro section" id="invitacion">
+      <p class="eyebrow">UN DÍA PARA RECORDAR</p>
+      <h2>Hay momentos que merecen<br><em>ser compartidos.</em></h2>
+      <p class="lead">Con mucha alegría queremos invitarte a celebrar nuestro amor y ser parte de este día tan especial.</p>
+      <div class="leaf-divider">❧</div>
+      <p class="script">¡Te esperamos!</p>
+    </section>
+
+    <section class="photo-section">
+      <div class="photo-frame">
+        <!-- Reemplazá assets/foto-principal.jpg por una foto de ustedes -->
+        <img src="_MG_7588 recortada.jpg" alt="Fotografía de Marina y Alejandro"
+             onerror="this.style.display='none';this.parentElement.classList.add('photo-placeholder')">
+        <span class="photo-placeholder-text">TU FOTO FAVORITA<br><small>Reemplazá foto-principal.jpg</small></span>
+      </div>
+    </section>
+
+    <section class="details section">
+      <p class="eyebrow">LA CELEBRACIÓN</p>
+      <h2>Queremos compartir<br><em>este día con vos.</em></h2>
+      <div class="detail-grid">
+        <article class="detail-card">
+          <span class="detail-icon">✧</span><h3>Cuándo</h3>
+          <p id="event-date">[DÍA, FECHA Y AÑO]</p><p id="event-time">[HORA]</p>
+        </article>
+        <article class="detail-card">
+          <span class="detail-icon">⌖</span><h3>Dónde</h3>
+          <p id="venue-name">[NOMBRE DEL LUGAR]</p><p id="venue-address">[DIRECCIÓN]</p>
+          <a id="map-link" class="text-link" href="#" target="_blank" rel="noopener">Cómo llegar ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="countdown-section">
+      <p class="eyebrow">LA CUENTA REGRESIVA</p>
+      <h2>Falta poquito...</h2>
+      <div class="countdown" aria-label="Cuenta regresiva">
+        <div><strong id="days">--</strong><span>DÍAS</span></div>
+        <div><strong id="hours">--</strong><span>HORAS</span></div>
+        <div><strong id="minutes">--</strong><span>MINUTOS</span></div>
+        <div><strong id="seconds">--</strong><span>SEGUNDOS</span></div>
+      </div>
+    </section>
+
+    <section class="gallery section">
+      <p class="eyebrow">NUESTROS MOMENTOS</p><h2>Un poquito de <em>nosotros.</em></h2>
+      <div class="gallery-grid">
+        <img src="_MG_7630.JPG" alt="Foto de la pareja 1" onerror="this.outerHTML='<div class=&quot;gallery-placeholder&quot;>FOTO 1</div>'">
+        <img src="_MG_7396.JPG" alt="Foto de la pareja 2" onerror="this.outerHTML='<div class=&quot;gallery-placeholder&quot;>FOTO 2</div>'">
+        <img src="_MG_7649.JPG" alt="Foto de la pareja 3" onerror="this.outerHTML='<div class=&quot;gallery-placeholder&quot;>FOTO 3</div>'">
+      </div>
+    </section>
+
+    <section class="gift-section section">
+      <p class="eyebrow">UN PRESENTE</p>
+      <h2>Lo más importante<br><em>es que estés.</em></h2>
+      <p class="lead">Si además querés hacernos un regalo, podés colaborar con nuestro próximo capítulo.</p>
+      <div class="alias-box">
+        <span>ALIAS BANCARIO</span><strong id="alias">[TU.ALIAS.BANCARIO]</strong>
+        <button class="button button-outline" id="copy-alias" type="button">Copiar alias</button>
+        <small id="copy-status" aria-live="polite"></small>
+      </div>
+    </section>
+
+    <section class="rsvp-section section" id="confirmar">
+      <p class="eyebrow">RSVP · RESPUESTA</p>
+      <h2>¿Nos <em>acompañás?</em></h2>
+      <p class="lead">Queremos preparar todo para que disfrutes este día. Por favor, confirmá antes del <strong id="rsvp-deadline">[FECHA LÍMITE]</strong>.</p>
+      <form id="rsvp-form">
+        <label for="guest-name">Nombre y apellido</label>
+        <input id="guest-name" name="nombre" autocomplete="name" required maxlength="100" placeholder="Tu nombre completo">
+        <label for="guest-phone">Teléfono (opcional)</label>
+        <input id="guest-phone" name="telefono" autocomplete="tel" maxlength="30" placeholder="Tu teléfono">
+        <fieldset>
+          <legend>¿Vas a asistir?</legend>
+          <label class="choice"><input type="radio" name="asistencia" value="Sí, voy" required> ¡Sí, ahí estaré!</label>
+          <label class="choice"><input type="radio" name="asistencia" value="No puedo asistir"> Esta vez no podré acompañarlos</label>
+        </fieldset>
+        <label for="companions">¿Quiénes te acompañan? (si corresponde)</label>
+        <textarea id="companions" name="acompanantes" rows="3" maxlength="500" placeholder="Escribí los nombres de tus acompañantes"></textarea>
+        <label for="notes">¿Algo que debamos saber? (opcional)</label>
+        <textarea id="notes" name="comentarios" rows="2" maxlength="500" placeholder="Alergias, menú especial u otro comentario"></textarea>
+        <button class="button button-dark" id="submit-rsvp" type="submit">Enviar confirmación</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <p class="privacy-note">Tus datos se utilizarán únicamente para organizar la celebración.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-flower">❧</div>
+    <p class="script">Con amor,</p><h2>Marina <em>&</em> Alejandro</h2>
+    <p id="footer-date">[FECHA DEL CASAMIENTO]</p>
+    <a href="#inicio" class="back-top">VOLVER AL INICIO ↑</a>
+  </footer>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
